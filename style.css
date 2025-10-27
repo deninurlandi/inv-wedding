@@ -95,7 +95,7 @@ body {
 .kipas-kanan {
   position: absolute;
   bottom: -20px;
-  right: -130px;
+  right: -138px;
   width: 250px;
   z-index: 7;
   display: inline-block;
@@ -272,7 +272,7 @@ body {
   width: 100%;
   position: absolute;
   inset: 0;
-  background-image: url('img/bg.png');
+  background-image: url('./public/img/bg.png');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
@@ -364,7 +364,7 @@ body {
   width: 100%;
   position: absolute;
   inset: 0;
-  background-image: url('img/bg-for-brown.png');
+  background-image: url('./public/img/bg-for-brown.png');
   background-size: contain;
   background-position: center;
   opacity: 0.2;
