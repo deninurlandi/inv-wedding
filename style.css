@@ -95,7 +95,7 @@ body {
 .kipas-kanan {
   position: absolute;
   bottom: -20px;
-  right: -138px;
+  right: -130px;
   width: 250px;
   z-index: 7;
   display: inline-block;
