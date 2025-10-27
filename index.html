@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
 
@@ -86,7 +86,7 @@
       <p>{QS : Ar-Rum(30) : 21}</p>
     </section>
     <!-- home -->
-    <section id="home" class="home px-4">
+    <section id="home" class="home">
       <div class="bg"></div>
       <img
         src="./img/ornamen-atas.png"
@@ -130,7 +130,10 @@
               <img src="./img/cewe.jpg" alt="ibnu rohman" class="calon-pria" />
             </div>
             <h3>Sugiarti Astutik</h3>
-            <p>Putra Terakhir Dari:<br />Bpk Rosid & Ibu Parikem</p>
+            <p>
+              Putra Terakhir Dari:<br />Bpk H. Anom Suratno (Alm) &<br />Ibu Hj.
+              Siti Sulastri
+            </p>
           </div>
         </div>
       </div>
@@ -206,7 +209,10 @@
               Palangka Raya
             </p>
           </div>
-          <a href="#" class="btn-location">
+          <a
+            href="https://maps.app.goo.gl/z2ejWZ2zp21FUDHA7"
+            class="btn-location"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
@@ -277,7 +283,10 @@
               Palangka Raya
             </p>
           </div>
-          <a href="#" class="btn-location">
+          <a
+            href="https://maps.app.goo.gl/z2ejWZ2zp21FUDHA7"
+            class="btn-location"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
@@ -290,8 +299,46 @@
       </div>
     </section>
     <!-- Map lokasi -->
-    <section class="map-lokasi">
-      <div class="container">lokasi</div>
+    <section id="lokasi" class="lokasi-section text-center">
+      <div class="container">
+        <h2 class="judul-lokasi">Lokasi Acara</h2>
+        <p class="nama-tempat">Kediaman Mempelai Wanita</p>
+        <p class="alamat-tempat">
+          Jl. Cemara No. 13, Depan Mess Cemara Palangka Raya
+        </p>
+
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d498.35366894328536!2d113.93507260103974!3d-2.2179353206771912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1761573794296!5m2!1sid!2sid"
+            width="100%"
+            height="270"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/RRqEPFJd8LcciStf8"
+          target="_blank"
+          class="btn-lokasi"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            class="bi bi-geo-alt"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12.166 8.94c-.524 1.062-1.267 2.14-2.097 3.063-.83.923-1.73 1.653-2.558 2.145a.5.5 0 0 1-.522 0c-.828-.492-1.728-1.222-2.558-2.145-.83-.923-1.573-2.001-2.097-3.063C2.22 7.842 2 6.953 2 6a6 6 0 1 1 12 0c0 .953-.22 1.842-.834 2.94zM8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+            />
+          </svg>
+          Lihat di Google Maps
+        </a>
+      </div>
     </section>
 
     <!-- Wedding Gift -->
@@ -307,7 +354,7 @@
             jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi
             kado secara cashless.
           </p>
-          <div class="btn-gift-card mb-5">
+          <div class="btn-gift-card">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -332,13 +379,13 @@
             Klik disini
           </div>
           <div
-            class="gift-back d-flex flex-column gap-5 justify-content-center align-items-center"
+            class="gift-back flex-column gap-5 justify-content-center align-items-center mt-5"
           >
             <div class="card-bank">
               <div class="card-left">
                 <img src="./img/chip.png" alt="chip-kartu" />
                 <div id="rekening" class="no-rekening">0485945895</div>
-                <div>Ibnu Rohman</div>
+                <div class="nama">Ibnu Rohman</div>
               </div>
 
               <div class="card-right">
@@ -370,8 +417,8 @@
             <div class="card-bank">
               <div class="card-left">
                 <img src="./img/chip.png" alt="chip-kartu" />
-                <div id="rekening" class="no-rekening">0485945895</div>
-                <div>Ibnu Rohman</div>
+                <div id="rekening2" class="no-rekening">1234578</div>
+                <div class="nama">Ibnu Rohman</div>
               </div>
 
               <div class="card-right">
@@ -379,9 +426,9 @@
                   <img src="./img/Logo-mandiri.png" alt="mandiri" />
                 </div>
                 <div
-                  id="btnSalin"
+                  id="btnSalin2"
                   class="botton-copy d-flex gap-2 justify-content-between align-items-center"
-                  onclick="salinRekening()"
+                  onclick="salinRekening2()"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
