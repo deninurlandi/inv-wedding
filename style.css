@@ -231,6 +231,7 @@ body {
   box-shadow: var(--shadow);
   margin-top: 1rem;
   animation: fadeInUpButton 1.6s ease forwards;
+  z-index: 5;
 }
 
 .hero a:hover {
@@ -570,8 +571,18 @@ body {
   background-color: #4e2a15;
   color: #f8f1dc;
   text-align: center;
+  position: relative;
 }
-
+.wedding-gift .bg {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background-image: url('./img/bg-for-brown.png');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 0;
+}
 .wedding-gift .card-gift {
   position: relative;
   padding: 25px;
@@ -626,6 +637,7 @@ body {
   fill: var(--abu-own);
 }
 /* card rekening */
+
 .card-bank {
   position: relative;
   max-width: 400px;
