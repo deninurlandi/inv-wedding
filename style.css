@@ -567,7 +567,7 @@ body {
 
 /*WEDDING GIFT */
 .wedding-gift {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   background-color: #4e2a15;
   color: #f8f1dc;
   text-align: center;
@@ -582,6 +582,9 @@ body {
   background-position: center;
   opacity: 0.2;
   z-index: 0;
+}
+.wedding-gift .container {
+  padding: 0 2rem;
 }
 .wedding-gift .card-gift {
   position: relative;
@@ -984,5 +987,124 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* uji coba */
+.buku-tamu {
+  width: 100%;
+  margin: 0 auto;
+  background: none;
+  position: relative;
+  padding: 2rem 2rem;
+}
+.buku-tamu .wishes-bg {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: var(--white);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+.buku-tamu .wishes-area {
+  background-color: var(--soft-gold);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.wishes-area h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+}
+
+.wishes-area p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--abu-own);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  z-index: 1;
+}
+
+button {
+  background: linear-gradient(to right, #d4af37, #b8860b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #e3c34d, #c9a12d);
+}
+
+#daftarUcapan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ucapan {
+  background: #fff8e1;
+  border-left: 4px solid #d4af37;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.ucapan small {
+  display: block;
+  color: #888;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* audio */
+.audio-icon-wrapper {
+  width: 2rem;
+  height: 2rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  color: var(--white);
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  z-index: 99;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

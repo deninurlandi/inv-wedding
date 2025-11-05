@@ -110,3 +110,112 @@ btnGift.addEventListener('click', () => {
   giftBack.classList.toggle('show');
   btnGift.classList.toggle('active');
 });
+
+// data base
+
+const form = document.getElementById('formUcapan');
+const daftarUcapan = document.getElementById('daftarUcapan');
+
+// Kirim data ke Firebase
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nama = document.getElementById('nama').value.trim();
+  const pesan = document.getElementById('pesan').value.trim();
+
+  if (nama && pesan) {
+    const waktu = new Date().toLocaleString('id-ID');
+
+    firebase.database().ref('bukutamu').push({
+      nama: nama,
+      pesan: pesan,
+      waktu: waktu,
+    });
+
+    form.reset();
+  }
+});
+
+// Menampilkan ucapan secara realtime
+firebase
+  .database()
+  .ref('bukutamu')
+  .on('value', (snapshot) => {
+    daftarUcapan.innerHTML = '';
+
+    snapshot.forEach((child) => {
+      const data = child.val();
+
+      const div = document.createElement('div');
+      div.classList.add('ucapan');
+      div.innerHTML = `
+      <strong>${data.nama}</strong><br>
+      ${data.pesan}
+      <small>${data.waktu}</small>
+    `;
+
+      daftarUcapan.prepend(div);
+    });
+  });
+
+// untuk menjalankan dissabble scrol
+scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+function disableScroll() {
+  if (scrollTop === 0 && scrollLeft === 0) {
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  }
+
+  const rootElement = document.querySelector(':root');
+  rootElement.style.scrollBehavior = 'auto';
+}
+
+function enableScroll() {
+  window.onscroll = function () {};
+  const rootElement = document.querySelector(':root');
+  rootElement.style.scrollBehavior = 'smooth';
+  playAudio();
+}
+
+window.addEventListener('load', () => {
+  if (scrollTop !== 0 || scrollLeft !== 0) {
+    window.scrollTo(0, 0);
+  }
+  disableScroll();
+});
+
+const audio = document.getElementById('song');
+const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+let isPlaying = false;
+function playAudio() {
+  audioIconWrapper.style.display = 'flex';
+  audio.volume = 0.3;
+  audio.play();
+  isPlaying = true;
+}
+audioIconWrapper.onclick = function () {
+  if (isPlaying) {
+    audio.pause();
+    audioIconWrapper.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0z"/>
+</svg>`;
+  } else {
+    audio.play();
+    audioIconWrapper.innerHTML = `<svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-disc"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+          />
+          <path
+            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+          />
+        </svg>`;
+  }
+  isPlaying = !isPlaying;
+};
