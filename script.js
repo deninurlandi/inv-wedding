@@ -123,7 +123,11 @@ form.addEventListener('submit', (e) => {
   const pesan = document.getElementById('pesan').value.trim();
 
   if (nama && pesan) {
-    const waktu = new Date().toLocaleString('id-ID');
+    const waktu = new Date().toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
 
     firebase.database().ref('bukutamu').push({
       nama: nama,
@@ -145,18 +149,16 @@ firebase
     snapshot.forEach((child) => {
       const data = child.val();
 
-      const div = document.createElement('div');
-      div.classList.add('ucapan');
-      div.innerHTML = `
-      <strong>${data.nama}</strong><br>
-      ${data.pesan}
-      <small>${data.waktu}</small>
-    `;
+      const li = document.createElement('li');
+      li.innerHTML = `
+          <span class="nama">${data.nama}</span>
+          <span class="pesan">${data.pesan}</span>
+          <span class="tanggal">${data.waktu}</span>
+        `;
 
-      daftarUcapan.prepend(div);
+      daftarUcapan.prepend(li);
     });
   });
-
 // untuk menjalankan dissabble scrol
 scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
