@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const weddingDate = new Date('2025-12-17T00:00:00+07:00');
+  const weddingDate = new Date('2025-12-17T08:00:00+07:00');
 
   simplyCountdown('#wedding-countdown', {
     year: weddingDate.getFullYear(),
@@ -221,3 +221,60 @@ audioIconWrapper.onclick = function () {
   }
   isPlaying = !isPlaying;
 };
+
+// animasi
+// ====== FORCE ANIMASI RIWAYAT (debuggable & robust) ======
+// Pilih semua elemen animasi
+// NATURAL AOS-LIKE VERSION
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll(`
+    .hidden-y,.hidden-x,.hidden-right,
+    .hidden-scale,.hidden-rotate,.hidden-bounce,
+    .hidden-smooth,.hidden-card
+  `);
+
+  function countUp(el, target, duration = 2500) {
+    if (el.dataset.done === 'true') return;
+    el.dataset.done = 'true';
+
+    const start = performance.now();
+    const from = 0;
+
+    function frame(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3); // cubic out
+      el.textContent = Math.floor(from + (target - from) * ease);
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+
+        // natural random delay
+        const random = Math.floor(Math.random() * 180);
+        el.style.transitionDelay = random + 'ms';
+
+        el.classList.add('tampil');
+
+        const num = el.querySelector('.count-number');
+        if (num) {
+          const t = parseInt(num.dataset.target || num.textContent);
+          num.textContent = '0';
+          num.classList.add('show');
+          countUp(num, t);
+        }
+
+        observer.unobserve(el);
+      });
+    },
+    { rootMargin: '0px 0px -20px 0px' },
+  );
+
+  items.forEach((el) => observer.observe(el));
+});

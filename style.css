@@ -1195,7 +1195,7 @@ button:hover {
   background-position: center;
   position: relative;
   z-index: 1;
-  padding: 3rem;
+  padding: 4rem;
   text-align: center;
 }
 
@@ -1205,7 +1205,7 @@ button:hover {
   max-width: 500px;
   backdrop-filter: blur(6px);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Aref Ruqaa', serif;
 }
@@ -1243,4 +1243,82 @@ button:hover {
 .bawah p {
   font-size: 0.9rem;
   margin: 0;
+}
+
+/* Kondisi awal */
+
+/* —————————————————————
+   KONDISI AWAL (HIDDEN)
+————————————————————— */
+
+.hidden-y,
+.hidden-x,
+.hidden-right,
+.hidden-scale,
+.hidden-rotate,
+.hidden-bounce,
+.hidden-smooth {
+  opacity: 0;
+  filter: blur(2px);
+  transition: all 1s ease-out;
+}
+
+/* Slide dari bawah */
+.hidden-y {
+  transform: translateY(60px);
+}
+
+/* Slide dari kiri */
+.hidden-x {
+  transform: translateX(-60px);
+}
+
+/* Slide dari kanan */
+.hidden-right {
+  transform: translateX(60px);
+}
+
+/* Scale kecil */
+.hidden-scale {
+  transform: scale(0.3);
+}
+
+/* Rotate + fade */
+.hidden-rotate {
+  transform: rotate(-6deg) translateY(20px) scale(0.9);
+}
+
+/* Bounce lembut (lebih elegan) */
+.hidden-bounce {
+  transform: translateY(60px) scale(0.9);
+}
+
+/* Smooth fade elegant */
+.hidden-smooth {
+  transform: translateY(20px);
+  transition: all 1s cubic-bezier(0.15, 0.85, 0.25, 1); /* smooth */
+}
+
+/* —————————————————————
+   KONDISI AKHIR (SHOW)
+————————————————————— */
+
+.tampil {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Bounce easing saat muncul */
+.tampil.hidden-bounce {
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* angka berjalan */
+.count-number {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.count-number.show {
+  opacity: 1;
 }
