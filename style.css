@@ -1259,7 +1259,7 @@ button:hover {
 .hidden-bounce,
 .hidden-smooth {
   opacity: 0;
-  filter: blur(2px);
+  filter: blur(1.5px);
   transition: all 1s ease-out;
 }
 

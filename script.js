@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .hidden-smooth,.hidden-card
   `);
 
-  function countUp(el, target, duration = 2500) {
+  function countUp(el, target, duration = 2300) {
     if (el.dataset.done === 'true') return;
     el.dataset.done = 'true';
 
