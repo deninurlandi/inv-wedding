@@ -720,6 +720,9 @@ body {
 .card-right .top {
   width: 100px;
 }
+.card-right .top-gift {
+  width: 60px;
+}
 .card-right .top img {
   width: 100%;
 }
@@ -732,6 +735,16 @@ body {
 .card-right .bottom img {
   width: 100%;
   height: 100%;
+}
+.text-card-gift {
+  text-align: left;
+}
+.text-card-gift h2 {
+  margin-bottom: 2px;
+}
+.text-card-gift p {
+  font-size: 1rem;
+  margin-top: 1px;
 }
 
 /* Efek border halus seperti logam */
