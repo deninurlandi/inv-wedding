@@ -752,8 +752,10 @@ section {
 .text-card-gift {
   text-align: left;
 }
-.text-card-gift h2 {
-  margin-bottom: 2px;
+.text-card-gift h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 .text-card-gift p {
   font-size: 1rem;
