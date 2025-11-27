@@ -115,8 +115,24 @@ btnGift.addEventListener('click', () => {
 
 const form = document.getElementById('formUcapan');
 const daftarUcapan = document.getElementById('daftarUcapan');
+const pesanTerimaKasih = document.getElementById('pesanTerimaKasih'); // elemen buat ucapan
 
-// Kirim data ke Firebase
+// Cek apakah sudah pernah kirim (pakai localStorage)
+const namaTersimpan = localStorage.getItem('namaPengirim');
+
+// Jika sudah pernah kirim, sembunyikan form & tampilkan ucapan terima kasih
+if (namaTersimpan) {
+  form.style.display = 'none';
+  pesanTerimaKasih.innerHTML = `
+   <div>
+      Terima kasih <span style="font-weight:bold; color:#c79c55;">${namaTersimpan}</span>
+      atas ucapan & doa yang diberikan 💛🙏
+    </div>
+  `;
+  pesanTerimaKasih.style.display = 'block';
+}
+
+// Event submit form
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const nama = document.getElementById('nama').value.trim();
@@ -129,11 +145,27 @@ form.addEventListener('submit', (e) => {
       year: 'numeric',
     });
 
+    // Kirim ke Firebase
     firebase.database().ref('bukutamu').push({
       nama: nama,
       pesan: pesan,
       waktu: waktu,
     });
+
+    // Simpan ke localStorage supaya nanti terdeteksi
+    localStorage.setItem('namaPengirim', nama);
+
+    // Sembunyikan form setelah mengirim
+    form.style.display = 'none';
+
+    // Tampilkan pesan terima kasih
+    pesanTerimaKasih.innerHTML = `
+      <div>
+        Terima kasih <span style="font-weight:bold; color:#3e3e3e;">${nama}</span>
+        atas ucapan & doa terbaik yang diberikan 💛🙏
+      </div>
+    `;
+    pesanTerimaKasih.style.display = 'block';
 
     form.reset();
   }
