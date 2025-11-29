@@ -786,7 +786,7 @@ section {
 }
 .botton-copy span {
   position: relative;
-  top: -2px;
+  top: -1.6px;
 }
 
 /* codingan untuk card hilang dulu */
@@ -1091,6 +1091,7 @@ textarea {
   border: 1px solid var(--abu-own);
   border-radius: 8px;
   padding: 10px;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   z-index: 1;
 
