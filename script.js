@@ -224,7 +224,7 @@ const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
 let isPlaying = false;
 function playAudio() {
   audioIconWrapper.style.display = 'flex';
-  audio.volume = 0.3;
+  audio.volume = 0.4;
   audio.play();
   isPlaying = true;
 }

@@ -653,6 +653,10 @@ section {
   z-index: 1;
   margin-top: 2rem;
 }
+.btn-gift-card span {
+  position: relative;
+  top: -1.6px;
+}
 
 .btn-gift-card:hover {
   background: linear-gradient(90deg, #b9933a, #d4b466);
@@ -778,6 +782,11 @@ section {
   padding: 2px 10px;
   border-radius: 10px;
   border: var(--gold) 1px solid;
+  cursor: pointer;
+}
+.botton-copy span {
+  position: relative;
+  top: -2px;
 }
 
 /* codingan untuk card hilang dulu */
@@ -1122,7 +1131,7 @@ button:hover {
   border-radius: 14px;
   background: #fff7e5;
   color: var(--abu-own);
-  border: 1.5px solid var(--gold);
+  border: 1px solid var(--gold);
   margin-top: 10px;
   animation: fadeThanks 0.5s ease;
   margin-bottom: 2rem;

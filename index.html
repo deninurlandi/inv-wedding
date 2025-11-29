@@ -384,7 +384,7 @@
                 ></path>
               </g>
             </svg>
-            Klik disini
+            <span>Klik disini</span>
           </div>
           <div
             class="gift-back flex-column gap-5 justify-content-center align-items-center mt-5"
@@ -418,7 +418,40 @@
                       d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
                     />
                   </svg>
-                  Copy
+                  <span>Copy</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-bank">
+              <div class="card-left">
+                <img src="./img/chip.png" alt="chip-kartu" />
+                <div id="rekening" class="no-rekening">793701008415538</div>
+                <div class="nama">an. Sugiarti Astutik</div>
+              </div>
+
+              <div class="card-right">
+                <div class="top">
+                  <img src="./img/bri.webp" alt="bri" />
+                </div>
+                <div
+                  id="btnSalin"
+                  class="botton-copy d-flex gap-2 justify-content-between align-items-center"
+                  onclick="salinRekening()"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    class="bi bi-copy"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+                    />
+                  </svg>
+                  <span>Copy</span>
                 </div>
               </div>
             </div>
@@ -468,7 +501,7 @@
                       d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
                     />
                   </svg>
-                  Copy
+                  <span>Copy</span>
                 </div>
               </div>
             </div>
@@ -527,10 +560,7 @@
 
     <div id="audia-container">
       <audio id="song" autoplay loop>
-        <source
-          src="./audio/WhatsApp Audio 2025-11-05 at 21.06.54_edfe1e8b.mp3"
-          type="audio/mp3"
-        />
+        <source src="./audio/beautiful-inwhite.mp3" type="audio/mp3" />
       </audio>
       <div class="audio-icon-wrapper" style="display: none">
         <svg
