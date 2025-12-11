@@ -434,7 +434,7 @@ section {
 .info .card .bunga-card-left {
   position: absolute;
   left: -27px;
-  bottom: 120px;
+  bottom: 111px;
   width: 120px;
   transform: scaleX(-1);
   transform: rotate(40deg);
