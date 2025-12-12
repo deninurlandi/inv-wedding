@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
     amountClass: 'simply-amount',
     wordClass: 'simply-word',
     refresh: 1000,
-    onEnd: function () {
-      document.querySelector('#wedding-countdown').style.display = 'none';
-      const msg = document.createElement('div');
-      msg.classList.add('finished');
-      msg.textContent = '💞 Selamat Menempuh Hidup Baru 💞';
-      document.querySelector('#hero').appendChild(msg);
-      msg.style.display = 'block';
-      return false;
-    },
+    // onEnd: function () {
+    //   document.querySelector('#wedding-countdown').style.display = 'none';
+    //   const msg = document.createElement('div');
+    //   msg.classList.add('finished');
+    //   msg.textContent = '💞 Selamat Menempuh Hidup Baru 💞';
+    //   document.querySelector('#hero').appendChild(msg);
+    //   msg.style.display = 'block';
+    //   return false;
+    // },
   });
 });
 
